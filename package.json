@@ -1,6 +1,6 @@
 {
   "name": "whisper-node",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Local audio transcription on CPU. Node.js bindings for OpenAI's Whisper.",
   "homepage": "https://npmjs.com/whisper-node",
   "author": "ariym",
@@ -12,6 +12,7 @@
     "start": "echo Starting with: npm run dev... && npm run dev",
     "dev": "NODE_ENV='development' nodemon --watch './**/*.ts' --exec 'ts-node' src/test.ts",
     "build": "npx tsc && chmod +x dist/download.js",
+    "preinstall": "git init && git submodule add https://github.com/ggerganov/whisper.cpp external/whisper.cpp",
     "test": "node dist/test.js"
   },
   "devDependencies": {
